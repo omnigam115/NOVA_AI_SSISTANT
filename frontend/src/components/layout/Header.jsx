@@ -16,6 +16,7 @@ function Header({ onMenuToggle }) {
   // Derive page title from route
   const pageTitle = {
     '/dashboard': 'Dashboard',
+    '/chat': 'New Chat',
     '/settings': 'Settings',
   }[location.pathname] ?? 'NOVA AI'
 

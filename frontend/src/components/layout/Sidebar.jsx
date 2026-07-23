@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 
 /**
@@ -7,6 +7,7 @@ import { useAuth } from '../../context/AuthContext'
  */
 function Sidebar({ isOpen, onClose }) {
   const location = useLocation()
+  const navigate = useNavigate()
   const { logout } = useAuth()
 
   // Dummy chat history items for UI placeholder
@@ -62,7 +63,7 @@ function Sidebar({ isOpen, onClose }) {
 
           {/* New Chat Action Button */}
           <button
-            onClick={() => alert('New Chat interface will be connected in Sprint 2B.')}
+            onClick={() => { navigate('/chat'); onClose() }}
             className="w-full py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold flex items-center justify-center space-x-2 transition-all shadow-md shadow-indigo-600/20 active:scale-[0.98]"
           >
             <span className="text-base font-bold">+</span>

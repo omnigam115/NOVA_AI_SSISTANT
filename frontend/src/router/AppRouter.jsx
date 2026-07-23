@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import DashboardLayout from '../components/layout/DashboardLayout'
 import ProtectedRoute from '../components/ProtectedRoute'
 import { AuthProvider } from '../context/AuthContext'
+import Chat from '../pages/Chat'
 import Dashboard from '../pages/Dashboard'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
@@ -31,6 +32,7 @@ function AppRouter() {
           >
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/chat" element={<Chat />} />
             <Route path="/settings" element={<Settings />} />
 
             {/* Legacy home route redirect */}
